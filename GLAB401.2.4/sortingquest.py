@@ -12,9 +12,14 @@ number_list = []
 for i in range(0, 20):
     number_list.append(rand.randint(1,100))
 
-print(number_list)
-# use built-in sorting
 
+# use built-in sorting
+print(f"Original pseudorandom list of integers: {number_list}")
+# sort list with built-in
+number_list.sort()
+print(f"Built-in sorted ascending: {number_list}")
+number_list.sort(reverse=True)
+print(f"Built-in sorted descending: {number_list}")
 # bubble sort
 
 # insertion sort
