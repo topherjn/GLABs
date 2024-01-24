@@ -4,14 +4,18 @@ and sorts them in ascending or descending order. Challenge yourself
 to implement sorting algorithms like bubble sort or insertion sort.
 """
 
+# custom random ints function
+def create_random_list():
+    number_list = []
+
+    for i in range(0, 20):
+        number_list.append(rand.randint(1,100))
+    return number_list
+
 # create list of numbers.  random?
 import random as rand
 
-number_list = []
-
-for i in range(0, 20):
-    number_list.append(rand.randint(1,100))
-
+number_list = create_random_list()
 
 # use built-in sorting
 print(f"Original pseudorandom list of integers: {number_list}")
@@ -56,9 +60,7 @@ def insertion_sort_list(list_to_sort):
         list_to_sort[j+1] = item_to_place
 
 # test bubble
-number_list = []
-for i in range(0, 20):
-    number_list.append(rand.randint(1,100))
+number_list = create_random_list()
 
 print(f"Original pseudorandom list of integers: {number_list}")
 
@@ -67,9 +69,7 @@ bubble_sort_list(number_list)
 print(f"After bubble sort: {number_list}")
 
 # test insertion sort
-number_list = []
-for i in range(0, 20):
-    number_list.append(rand.randint(1,100))
+number_list = create_random_list()
 
 print(f"Original pseudorandom list of integers: {number_list}")
 

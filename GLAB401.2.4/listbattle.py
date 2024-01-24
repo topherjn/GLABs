@@ -1,6 +1,6 @@
 import random as rand
 
-# create two lists
+# custom random ints function
 def create_random_list():
     number_list = []
 
@@ -8,6 +8,7 @@ def create_random_list():
         number_list.append(rand.randint(1,100))
     return number_list
 
+# create two lists
 list1 = create_random_list()
 list2 = create_random_list()
 common = []
@@ -29,4 +30,4 @@ for item in list2:
 # print length of third list
 print("Common elements: ")
 print(common)
-print(len(common))
+print("Number in common: " + len(common))
