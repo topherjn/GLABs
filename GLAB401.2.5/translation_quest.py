@@ -16,4 +16,7 @@ translation_dictionary['eye'] = 'oeil'
 
 word = input("Enter an English word to translate into French: ")
 
-print(f"{word} is {translation_dictionary[word]} in French")
+if word in translation_dictionary: 
+    print(f"{word} is {translation_dictionary[word]} in French")
+else:
+    print("Word is not in dictionary")
