@@ -27,7 +27,10 @@ for item in list2:
     if item in list1:
         common.append(item)
 
+# turn common list into set to get rid of dupes
+# print set of common elements
 # print length of third list
+common = set(common)
 print("Common elements: ")
 print(common)
-print("Number in common: " + len(common))
+print("Number in common: " + str(len(common)))
