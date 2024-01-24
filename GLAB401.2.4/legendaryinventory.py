@@ -1,3 +1,5 @@
+"""The Legendary Inventory: Design a game inventory system where the player can add or remove items from their inventory. Use lists to store the items and allow the player to perform actions such as viewing, adding, or dropping items.
+"""
 
 # add item
 def add_item(inventory, item):

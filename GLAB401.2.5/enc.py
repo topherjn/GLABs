@@ -1,3 +1,7 @@
+"""The Cryptic Encoder: Write a program that encrypts a message using a simple substitution cipher. Use a dictionary to map each letter to its corresponding encrypted value. Decrypt the message using the reverse mapping."""
+
+# sister file: dec.py
+
 #!/usr/bin/python
 from sys import argv
 

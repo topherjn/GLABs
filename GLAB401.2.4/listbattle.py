@@ -1,3 +1,5 @@
+"""The Battle of Lists: Write a program that compares two lists and finds the common elements between them. Display the matching items and the total count of matches
+"""
 import random as rand
 
 # custom random ints function
