@@ -9,19 +9,30 @@ if len(argv) != 2:
   print('Usage: >> ./enc.py input_file')
   exit()
 
+# open the file specified on command line for reading
+# open a new file to save translation
+# name of translation file built from read file
 fr = open(argv[1])
 fw = open("encrypted_"+argv[1], "w")
 
+# read all the contents into one string
 file_content = fr.read()
 fr.close()
+
+# make all content lower case
 file_content = file_content.lower()
+
+# turn the letters into a list
 content = list(file_content)
+
+# turn letters into substitute letters
 i = 0
 while i<len(content):
   if content[i] in key:
     content[i] = key[content[i]]
   i+=1
 
+# turn list into string and write to file
 output = "".join(content)
 fw.writelines(output)
 
