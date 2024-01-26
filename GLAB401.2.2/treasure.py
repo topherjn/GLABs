@@ -1,7 +1,7 @@
 import random as rnd
 
 treasure = rnd.randint(0,101)
-treasure = 65
+# treasure = 65 for testing
 
 guess = 0
 
