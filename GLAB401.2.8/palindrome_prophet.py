@@ -21,7 +21,7 @@ phrase = input("Enter a phrase to test: ")
 print(is_palidrome(phrase))
 
 # user friendlier
-print(f'"{phrase}" is', '' if not is_palidrome(phrase) else 'not', 'a palindrome')
+print(f'"{phrase}" is', '' if is_palidrome(phrase) else 'not', 'a palindrome')
 
 
 
