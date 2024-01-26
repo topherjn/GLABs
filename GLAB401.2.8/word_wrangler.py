@@ -6,13 +6,11 @@ sentence = 'Inoffensive speech needs no protection.'
 words = sentence.split()
 print(len(words))
 # Identify and print the longest word in the sentence.
-biggest_word = words[0]
-max = len(biggest_word)
+biggest_word = ''
 
-for word in words[1:]:
-    if len(word) > max:
+for word in words:
+    if len(word) > len(biggest_word):
         biggest_word = word
-        max = len(word)
 print("Longest word: " + biggest_word)
 
 # Capitalize the first letter of each word in the sentence.
