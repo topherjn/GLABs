@@ -20,6 +20,8 @@ phrase = input("Enter a phrase to test: ")
 # Print the results.
 print(is_palidrome(phrase))
 
+# user friendlier
+print(f'"{phrase}" is', '' if not is_palidrome(phrase) else 'not', 'a palindrome')
 
 
 
