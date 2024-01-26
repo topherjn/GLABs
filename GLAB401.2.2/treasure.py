@@ -11,7 +11,7 @@ guess = 0
 try:
     guess = int(input('What number do you think hides the treasure (1 - 100)? '))
 except ValueError:
-    print("Please enter a whole number in Hindu numerals. ")
+    print("Please enter")
 
 # as long as the user is wrong let them know how close they are
 while guess != treasure:
@@ -21,14 +21,11 @@ while guess != treasure:
         print("You're getting warmer!")
     else:
         print("Ice cold!")
-\
-    # set up the next guess
+    # set up next guess
     try:
         guess = int(input('What number do you think hides the treasure (1 - 100)? '))
     except ValueError:
-        print("Please enter a whole number in Hindu numerals. ")
-
-
-
+        print("Please enter")
+    
 # loop ends when they guess the answer
 print("You found the treasure! ")
