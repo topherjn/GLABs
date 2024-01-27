@@ -27,7 +27,7 @@ income = int(input("Enter your income: "))
 
 while income < 0:
     print("Your expenses don't count")
-    income = float(input("Enter your income: "))
+    income = int(input("Enter your income: "))
 
 # set the ranges of income based on the status
 if status == statuses[0]:
