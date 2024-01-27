@@ -28,6 +28,13 @@ def get_person(person_id, people):
     for detail in details:
         print(detail + ": " + details[detail])
 
+# update a person by id
+def update_person(person_id, people):
+    person_details = people[person_id]
+
+    for detail in person_details:
+        person_details[detail] = input(f'Confirm or enter a new detail for person number  {person_id} detail {detail}: ')
+
 # create a dictionary of people
 people = {}
 
@@ -40,7 +47,13 @@ add_person(people)
 get_person(0,people)
 get_person(1,people)
 
-print(people)
+# update person by id and dictionary
+update_person(1,people)
+
+for i in range(len(people)):
+    get_person(i, people)
+
+
 
 
 
