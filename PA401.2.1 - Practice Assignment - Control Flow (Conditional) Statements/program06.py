@@ -23,7 +23,7 @@ while status not in statuses:
     print("Try again.")
     status = input("Enter your filing status: ")
 
-income = float(input("Enter your income: "))
+income = int(input("Enter your income: "))
 
 while income < 0:
     print("Your expenses don't count")
@@ -34,7 +34,7 @@ if status == statuses[0]:
     tax_bracket = single_rates
 elif status == statuses[1]:
     tax_bracket = joint_rates
-elif status == statuses[2]:\
+elif status == statuses[2]:
     tax_bracket = separate_rates
 elif status == statuses[3]:
     tax_bracket = head_rates
