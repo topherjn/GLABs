@@ -12,4 +12,4 @@ elif score >= 60 and score <= 69:
 elif score >= 0:
     print('F')
 else:
-    print("Invalid score")
+    print("Score out of range")
