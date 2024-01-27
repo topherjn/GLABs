@@ -1,5 +1,6 @@
-# Create a new Python file named "palindrome_prophet.py."
-    # done
+# Create a new Python file named "palindrome_detective.py."
+# Just copied from the other GLAB
+
 # Define a function that checks if a given string is a palindrome.
 alphanumeric = ("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","0")
 def is_palidrome(phrase):
@@ -17,10 +18,7 @@ def is_palidrome(phrase):
 
 phrase = input("Enter a phrase to test: ")
 
-# Print the results.
-print(is_palidrome(phrase))
-
-# user friendlier
+# print result, user friendlier
 print(f'"{phrase}" is', '' if is_palidrome(phrase) else 'not','a palindrome'.strip())
 
 
