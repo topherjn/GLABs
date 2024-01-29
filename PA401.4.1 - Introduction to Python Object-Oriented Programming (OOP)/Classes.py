@@ -46,7 +46,8 @@ if __name__ == "__main__":
     # task 4
     person.reveal_secret()
 
+    # can't access the private variable directly
     try:
         print(person.__secret)
-    except Exception:
+    except Exception: # should really to catch specific exception
         print("You can't touch the secret!")
