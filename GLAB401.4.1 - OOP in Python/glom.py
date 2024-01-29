@@ -95,6 +95,6 @@ account4.ApplyInterest()
 bank = Bank("MyBank")
 bank.create_account(account1)
 bank.create_account(account2)
-bank.create_account(account3)
-bank.create_account(account4)
+bank.create_account(account3) # checking
+bank.create_account(account4) # savings
 bank.generate_account_statements()
