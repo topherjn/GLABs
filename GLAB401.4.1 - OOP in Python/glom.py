@@ -31,6 +31,21 @@ class Account:
         else:
             print("Insufficient balance")
 
+# creating derived class checking account from
+# account class.  Checking account will add
+# a transaction fee 
+class CheckingAccount(Account):
+    def __init__(self, amount, customer, fee):
+        super().__init__(amount,customer)
+        self.fee = fee
+    
+    def deposit(self,amount):
+        super().deposit(amount + self.fee)
+
+    def withdraw(self, amount):
+        return super().withdraw(amount + self.fee)
+         
+
 # Create objects and perform banking operations
 customer1 = Customer("John Doe")
 account1 = Account(12345, customer1)
@@ -41,7 +56,13 @@ customer2 = Customer("Jane Smith")
 account2 = Account(54321, customer2)
 account2.deposit(2000)
 
+account3 = CheckingAccount(11111, customer2, .50)
+account3.deposit(20)
+account3.deposit(5000)
+account3.withdraw(5000)
+
 bank = Bank("MyBank")
 bank.create_account(account1)
 bank.create_account(account2)
+bank.create_account(account3)
 bank.generate_account_statements()
