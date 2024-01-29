@@ -1,3 +1,4 @@
+# Task 1
 class Person:
     def __init__(self,name,age) -> None:
         self.name = name
@@ -5,6 +6,9 @@ class Person:
 
     def print_person(self):
         print(f"Name: {self.name}, Age: {self.age}")
+# Task 2
+class Student(Person):
+
 
         
 
