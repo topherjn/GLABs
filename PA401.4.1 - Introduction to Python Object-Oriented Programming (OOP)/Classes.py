@@ -8,6 +8,7 @@ class Person:
         print("Person object created")
 
     # Task 3
+    # NB I would rather return a string here
     def display_info(self):
         print(f"\nName: {self.name}, Age: {self.age}", end="")
 
@@ -24,6 +25,7 @@ class Student(Person):
         print("Student object created")
 
     # Task 3
+    # NB I would rather return a string here
     def display_info(self):
         super().display_info()
         print(f", Student ID: {self.student_id}")
