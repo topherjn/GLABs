@@ -3,17 +3,33 @@ class Person:
     def __init__(self,name,age) -> None:
         self.name = name
         self.age = age
+        
+        print("Person object created")
 
-    def print_person(self):
-        print(f"Name: {self.name}, Age: {self.age}")
+    # Task 3
+    def display_info(self):
+        print(f"\nName: {self.name}, Age: {self.age}", end="")
+
 # Task 2
 class Student(Person):
+    def __init__(self, name, age, student_id):
+        super().__init__(name, age)
+        self.student_id = student_id
 
+        print("Student object created")
 
-        
+    # Task 3
+    def display_info(self):
+        super.display_info()
+        print(f", Student ID: {self.student_id}")
 
 # testing
 if __name__ == "__main__":
+    # task 1
     person = Person('Tav',2)
-    person.print_person()
+
+    # task 2
+    student = Student('Spicoli', 17, 666)
+
+
     
