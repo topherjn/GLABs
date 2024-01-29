@@ -20,7 +20,7 @@ class Student(Person):
 
     # Task 3
     def display_info(self):
-        super.display_info()
+        super().display_info()
         print(f", Student ID: {self.student_id}")
 
 # testing
@@ -30,6 +30,11 @@ if __name__ == "__main__":
 
     # task 2
     student = Student('Spicoli', 17, 666)
+
+    # task 3
+    print("\nDisplaying info: ")
+    person.display_info()
+    student.display_info()
 
 
     
