@@ -39,12 +39,24 @@ class CheckingAccount(Account):
         super().__init__(amount,customer)
         self.fee = fee
     
+    # override base-class methods and add the fee
     def deposit(self,amount):
         super().deposit(amount + self.fee)
 
     def withdraw(self, amount):
         return super().withdraw(amount + self.fee)
-         
+    
+class SavingsAccount(Account):
+    def __init__(self, amount, customer, rate):
+        super().__init__(amount,customer)
+        self.rate = rate
+    
+    # multiply balance by rate to get
+    # interest then use base class
+    # to deposit that amount
+    def ApplyInterest(self):
+        interest = self.balance * self.rate
+        self.deposit(interest)
 
 # Create objects and perform banking operations
 customer1 = Customer("John Doe")
@@ -61,8 +73,13 @@ account3.deposit(20)
 account3.deposit(5000)
 account3.withdraw(5000)
 
+account4 = SavingsAccount(21211, customer1, .04)
+account4.deposit(1000)
+account4.ApplyInterest()
+
 bank = Bank("MyBank")
 bank.create_account(account1)
 bank.create_account(account2)
 bank.create_account(account3)
+bank.create_account(account4)
 bank.generate_account_statements()
