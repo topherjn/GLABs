@@ -1,33 +1,48 @@
 class Bank:
     def __init__(self, name):
-        self.name = name
-        self.accounts = []
+        self.__name = name
+        self.__accounts = []
+
+    def get_accounts(self):
+        return self.__accounts
 
     def create_account(self, account):
-        self.accounts.append(account)
+        self.__accounts.append(account)
 
     def generate_account_statements(self):
-        for account in self.accounts:
-            print(f"Account Number: {account.account_number}")
-            print(f"Customer Name: {account.customer.name}")
-            print(f"Balance: {account.balance}")
+        for account in self.__accounts:
+            print(f"Account Number: {account.get_account_no()}")
+            print(f"Customer Name: {account.get_customer_name()}")
+            print(f"Balance: {account.get_balance()}")
 
 class Customer:
     def __init__(self, name):
-        self.name = name
+        self.__name = name
+        self.name = self.__name.upper()
+    def get_customer_name(self):
+        return self.__name
 
 class Account:
     def __init__(self, account_number, customer):
-        self.account_number = account_number
-        self.customer = customer
-        self.balance = 0
+        self.__account_number = account_number
+        self.__customer = customer
+        self.__balance = 0
+    
+    def get_balance(self):
+        return self.__balance
+    
+    def get_account_no(self):
+        return self.__account_number
+    
+    def get_customer_name(self):
+        return self.__customer.get_customer_name()
 
     def deposit(self, amount):
-        self.balance += amount
+        self.__balance += amount
 
     def withdraw(self, amount):
-        if self.balance >= amount:
-            self.balance -= amount
+        if self.__balance >= amount:
+            self.__balance -= amount
         else:
             print("Insufficient balance")
 
@@ -37,25 +52,25 @@ class Account:
 class CheckingAccount(Account):
     def __init__(self, amount, customer, fee):
         super().__init__(amount,customer)
-        self.fee = fee
+        self.__fee = fee
     
     # override base-class methods and add the fee
     def deposit(self,amount):
-        super().deposit(amount + self.fee)
+        super().deposit(amount + self.__fee)
 
     def withdraw(self, amount):
-        return super().withdraw(amount + self.fee)
+        return super().withdraw(amount + self.__fee)
     
 class SavingsAccount(Account):
     def __init__(self, amount, customer, rate):
         super().__init__(amount,customer)
-        self.rate = rate
+        self.__rate = rate
     
     # multiply balance by rate to get
     # interest then use base class
     # to deposit that amount
     def ApplyInterest(self):
-        interest = self.balance * self.rate
+        interest = self.get_balance() * self.__rate
         self.deposit(interest)
 
 # Create objects and perform banking operations
