@@ -5,6 +5,11 @@ class Person:
         self.age = age
         
         print("Person object created")
+
+    # Task 3
+    def display_info(self):
+        print(f"Person Name: {self.name}, Person Age: {self.age}")
+        
 # Task 2
 class Student(Person):
     def __init__(self, name, age, student_id):
