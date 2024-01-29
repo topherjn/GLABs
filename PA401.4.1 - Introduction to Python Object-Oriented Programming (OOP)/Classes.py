@@ -3,12 +3,17 @@ class Person:
     def __init__(self,name,age) -> None:
         self.name = name
         self.age = age
+        self.__secret = 616
         
         print("Person object created")
 
     # Task 3
     def display_info(self):
         print(f"\nName: {self.name}, Age: {self.age}", end="")
+
+    # Task 4
+    def reveal_secret(self):
+        print('Secret: ',self.__secret)
 
 # Task 2
 class Student(Person):
@@ -23,6 +28,8 @@ class Student(Person):
         super().display_info()
         print(f", Student ID: {self.student_id}")
 
+
+
 # testing
 if __name__ == "__main__":
     # task 1
@@ -36,5 +43,10 @@ if __name__ == "__main__":
     person.display_info()
     student.display_info()
 
+    # task 4
+    person.reveal_secret()
 
-    
+    try:
+        print(person.__secret)
+    except Exception:
+        print("You can't touch the secret!")
