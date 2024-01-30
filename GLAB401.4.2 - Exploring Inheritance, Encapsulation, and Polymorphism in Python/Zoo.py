@@ -40,17 +40,19 @@ class Zookeeper:
         entry = ("observe", animal, behavior)
         self.__log.append(entry)
 
+    # print entry followed by animal making a sound
     def print_log(self):
         for entry in self.__log:
-            print(entry)
+            print(entry[1].name,":", entry[2],": ", end="")
+            entry[1].make_sound()
 
 
 
 # testing
 if __name__=="__main__":
-    bird = Bird('Rocky','Rooster', 12, 'red')
 
-    bird.make_sound()
+    # make some animals
+    bird = Bird('Rocky','Rooster', 12, 'red')
 
     parrot = Bird('Polly', 'Parrot', 2, 'green')
 
@@ -60,10 +62,10 @@ if __name__=="__main__":
 
     # logging events
     zookeeper = Zookeeper("Joe")
-    zookeeper.clean('Leo','very dirty')
-    zookeeper.observe('Polly','Eating cracker')
-    zookeeper.feed('Cloe','banana')
-    zookeeper.observe('Cloe','spitting')
+    zookeeper.clean(lion,'very dirty')
+    zookeeper.observe(parrot,'Eating cracker')
+    zookeeper.feed(monkey,'banana')
+    zookeeper.observe(monkey,'spitting')
 
     # print out log
     zookeeper.print_log()
