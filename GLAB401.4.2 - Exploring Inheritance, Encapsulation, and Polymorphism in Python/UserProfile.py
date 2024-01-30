@@ -31,17 +31,22 @@ class UserProfile:
 if __name__ == "__main__":
     profile = UserProfile("nicholson", "nicholsonc@gmail.com", "password")
 
+    # print out
     print(profile.get_username())
     print(profile.get_email())
     print(profile.get_password())
 
+    # reset
     profile.set_username("cjnicholson")
     profile.set_email("cj@mail.com")
     profile.set_password("mypass")
 
+    # checks
     print(profile.get_username())
     print(profile.get_email())
     print(profile.get_password())
+
+
 
     
    
