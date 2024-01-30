@@ -36,6 +36,14 @@ class Triangle(Shape):
         self.__base = base
         self.__height = height
 
+    @property
+    def base(self):
+        return self.__base
+    
+    @base.setter
+    def base(self, value):
+        self.__base = value
+
     def calculate_area(self):
         return 0.5 * self.__base *self.__height
 
@@ -50,3 +58,8 @@ if __name__ == "__main__":
     
     shape = Triangle(base=4,height=5)
     print(str(shape.calculate_area()))
+
+    # testing out properties
+    shape.base = 12
+
+    print(shape.base)
