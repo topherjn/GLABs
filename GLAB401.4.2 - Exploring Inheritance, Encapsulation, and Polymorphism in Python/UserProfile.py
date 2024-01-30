@@ -1,7 +1,7 @@
 class UserProfile:
     # use dunders to make private
-    # use mutators to initialize them 
-    # once we have created them
+    # explore later why I can't use mutators here
+    # interpretor?
     def __init__(self,username, email, password) -> None:
         self.__username = username
         self.__email = email
@@ -26,12 +26,22 @@ class UserProfile:
     
     def get_password(self):
         return self.__password
-    
+
+# testing
 if __name__ == "__main__":
-    profile = UserProfile("nicholson", "nicholsonc@gamil.com", "password")
+    profile = UserProfile("nicholson", "nicholsonc@gmail.com", "password")
 
     print(profile.get_username())
-    
+    print(profile.get_email())
+    print(profile.get_password())
+
+    profile.set_username("cjnicholson")
+    profile.set_email("cj@mail.com")
+    profile.set_password("mypass")
+
+    print(profile.get_username())
+    print(profile.get_email())
+    print(profile.get_password())
 
     
    
