@@ -19,7 +19,7 @@ except Exception:
     exit()
 
 # open a file in the cwd with user's input
-# exits on crash for now
+# exits on file not found for now
 # for this version show message
 try:
     with open(filename) as fd:
