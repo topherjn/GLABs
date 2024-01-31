@@ -21,7 +21,7 @@ def add_task(task, filename):
     
     # capitalize first letter for consistency
     task = task[0].upper() + task[1:]
-    task = '\n'+task+'\n'
+    task = task+'\n'
 
     # append task to file
     try:
@@ -41,6 +41,7 @@ Display a user-friendly message if the file doesn't exist.
 # prompt user 
 # save user response in variable
 filename = input("What is the name of the file you want to open? ")
+filename = 'to_do_list.txt' # for testing
 
 # if the user messes up yell at user
 try:
@@ -68,7 +69,7 @@ task = input("What task to you want to add?\n'quit' when done: ")
 
 while task.lower() != 'quit':
     # returns -1 on empty
-    if add_task(task,contents,filename) < 0:
+    if add_task(task,filename) < 0:
         print("Cannot add an empty task")
 
     # give user chance to see update
