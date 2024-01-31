@@ -16,7 +16,7 @@ def add_task(task, contents,filename):
     # and present file might not have newline
     # at EOF
     task = task[0].upper() + task[1:]
-    task = '\n' + task+ '\n'
+    task = task + '\n'
 
     # append task to file
     try:
