@@ -1,4 +1,11 @@
 import os
+"""
+Organize your code into functions to enhance readability and maintainability.
+Create separate functions for reading, writing, and validating user input for the to-do list.
+Ensure that each function has a clear purpose and follows best practices for function design.
+"""
+
+
 # start reading comments below function
 """
 Create a function to receive user input for adding tasks to the to-do list.
