@@ -1,30 +1,4 @@
 import os
-# start reading comments below function
-"""
-Create a function to receive user input for adding tasks to the to-do list.
-Validate the input to ensure the task description is not empty.
-Implement user-friendly messages to provide feedback on successful task additions and error conditions.
-Write the to-do list tasks to a text file in append mode ("a").
-Allow the user to choose whether to add another task or exit the program.
-"""
-def add_task(task, contents,filename):
-    # don't add nothing tasks
-    if len(task) == 0:
-        return int(-1)   
-    
-    # capitalize first letter for consistency
-    task = task[0].upper() + task[1:]
-    task = task+'\n'
-
-    # append task to file
-    try:
-        with open(filename,"a") as fd:
-            fd.write(task)
-    except Exception:
-        print("Something when wrong during writing!")
-        exit()
-    return int(0)
-
 """
 Write a Python program that reads and displays the contents of a to-do list stored in a text file.
 Use the "with" statement for file handling to ensure proper resource management.
@@ -45,7 +19,7 @@ except Exception:
     exit()
 
 # open a file in the cwd with user's input
-# will crash on File Not Found
+# exits on crash for now
 # for this version show message
 try:
     with open(filename) as fd:
@@ -57,19 +31,3 @@ except Exception:
 print("These are the items currently on your list: ")
 # print file contents
 print(contents)
-task = input("What task to you want to add?\n'quit' when done: ")
-
-while task.lower() != 'quit':
-    # returns -1 on empty
-    if add_task(task,contents,filename) < 0:
-        print("Cannot add an empty task")
-
-    # give user chance to see update
-    print("Current list: ")
-    with open(filename) as fd:
-        contents = fd.read()
-
-    print(contents)
-
-    # prompts for next task
-    task = input("What task to you want to add?\n'quit' when done: ")
