@@ -1,9 +1,3 @@
-Do Homework
-Play BG3
-Try to sleep
-Feed the dogs
-Walk the dogs
-Bathe the dogs
-Whatever
-
-Ok
+Sleep
+Work
+Eat\Sleep
