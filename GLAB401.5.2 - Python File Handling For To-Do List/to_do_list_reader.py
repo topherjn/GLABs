@@ -14,12 +14,15 @@ def add_task(task, contents,filename):
     
     # capitalize first letter for consistency
     task = task[0].upper() + task[1:]
-    contents += "n" + task + "\n"
+    task = task+'\n'
 
     # append task to file
-    with open(filename,"w") as fd:
-        fd.write(contents)
-
+    try:
+        with open(filename,"a") as fd:
+            fd.write(task)
+    except Exception:
+        print("Something when wrong during writing!")
+        exit()
     return int(0)
 
 """
@@ -44,19 +47,29 @@ except Exception:
 # open a file in the cwd with user's input
 # will crash on File Not Found
 # for this version show message
-with open(filename) as fd:
-    contents = fd.read() # read all contents into string
+try:
+    with open(filename) as fd:
+        contents = fd.read() # read all contents into string
+except Exception:
+    print("Sorry, something went wrong")
+    exit()
 
 print("These are the items currently on your list: ")
 # print file contents
 print(contents)
-task = input("What task to you want to add?" )
+task = input("What task to you want to add?\n'quit' when done: ")
 
-if add_task('walk the dog',contents,filename) < 0:
-    print("Cannot add an empty task")
+while task.lower() != 'quit':
+    # returns -1 on empty
+    if add_task(task,contents,filename) < 0:
+        print("Cannot add an empty task")
 
-print("Current list: ")
-with open(filename) as fd:
-    contents = fd.read()
+    # give user chance to see update
+    print("Current list: ")
+    with open(filename) as fd:
+        contents = fd.read()
 
-print(contents)
+    print(contents)
+
+    # prompts for next task
+    task = input("What task to you want to add?\n'quit' when done: ")
