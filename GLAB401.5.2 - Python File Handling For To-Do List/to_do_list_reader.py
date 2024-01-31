@@ -14,14 +14,14 @@ Implement user-friendly messages to provide feedback on successful task addition
 Write the to-do list tasks to a text file in append mode ("a").
 Allow the user to choose whether to add another task or exit the program.
 """
-def add_task(task, contents,filename):
+def add_task(task, filename):
     # don't add nothing tasks
     if len(task) == 0:
         return int(-1)   
     
     # capitalize first letter for consistency
     task = task[0].upper() + task[1:]
-    task = task+'\n'
+    task = '\n'+task+'\n'
 
     # append task to file
     try:
