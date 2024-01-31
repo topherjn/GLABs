@@ -13,8 +13,10 @@ def add_task(task, contents,filename):
         return int(-1)   
     
     # capitalize first letter for consistency
+    # and present file might not have newline
+    # at EOF
     task = task[0].upper() + task[1:]
-    task = task+'\n'
+    task = '\n' + task+ '\n'
 
     # append task to file
     try:
