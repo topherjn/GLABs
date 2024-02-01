@@ -81,43 +81,42 @@ def add_task(task,filename):
     return int(0)
 
 # main is here
-# testing
-
-# etc from user
-filename = input("What is the name of the file you want to open? ")
-filename = 'to_do_list.txt' # for testing
-
-while not validate_user_input(filename):
-    print(F"File {filename} not found. Try Again:")
+if __name__ == "__main__":
+    # testing
     filename = input("What is the name of the file you want to open? ")
 
-# creating a new list
-# newfile == true
-# let I/O wrapper functions do the work   
-contents = "Sleep\nWork\nEat\nSleep\n"
 
-num_bytes = write_to_todo_list(filename,contents,True)
-if num_bytes < 0:
-    print("Something went wrong during writing")
-else:
-    print(f"{num_bytes} characters written to {filename}")
+    while not validate_user_input(filename):
+        print(F"File {filename} not found. Try Again:")
+        filename = input("What is the name of the file you want to open? ")
 
-    # the function does the I/O work
-contents = read_todo_list(filename)
-if contents is not None:
-    print(contents)
+    # creating a new list
+    # newfile == true
+    # let I/O wrapper functions do the work   
+    contents = "Sleep\nWork\nEat\nSleep\n"
 
-# adding tasks
-task = input("What task to you want to add?\n'quit' when done: ")
+    num_bytes = write_to_todo_list(filename,contents,True)
+    if num_bytes < 0:
+        print("Something went wrong during writing")
+    else:
+        print(f"{num_bytes} characters written to {filename}")
 
-while task.lower() != 'quit':
-    # returns -1 on empty
-    if add_task(task,filename) < 0:
-        print("Cannot add an empty task")
+        # the function does the I/O work
+    contents = read_todo_list(filename)
+    if contents is not None:
+        print(contents)
 
-    # give user chance to see update
-    print("Current list: ")
-    print(read_todo_list(filename))
-
-    # prompts for next task
+    # adding tasks
     task = input("What task to you want to add?\n'quit' when done: ")
+
+    while task.lower() != 'quit':
+        # returns -1 on empty
+        if add_task(task,filename) < 0:
+            print("Cannot add an empty task")
+
+        # give user chance to see update
+        print("Current list: ")
+        print(read_todo_list(filename))
+
+        # prompts for next task
+        task = input("What task to you want to add?\n'quit' when done: ")
