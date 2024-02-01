@@ -62,6 +62,7 @@ def validate_user_input(input):
     return True
 
 def add_task(task,filename):
+
     # don't add nothing tasks
     if len(task) == 0:
         return int(-1)   
@@ -84,6 +85,7 @@ def add_task(task,filename):
 
 # etc from user
 filename = input("What is the name of the file you want to open? ")
+filename = 'to_do_list.txt' # for testing
 
 while not validate_user_input(filename):
     print(F"File {filename} not found. Try Again:")
