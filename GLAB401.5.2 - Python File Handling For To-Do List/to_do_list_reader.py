@@ -4,6 +4,7 @@
 
 # Starting fresh while referring to saved versions
 
+# for reading anything
 def read_todo_list(filename):
     contents = None
 
@@ -19,7 +20,8 @@ def read_todo_list(filename):
 
     return contents
 
-def write_to_todo_list(filename, content, newfile):
+# for writing anything
+def write_to_todo_list(filename, contents, newfile=False):
     
     if newfile:
         mode = 'w'
@@ -43,34 +45,54 @@ def write_to_todo_list(filename, content, newfile):
 
     return error
 
+# since  I don't know exactly
+# what is wanted, I will just check
+# for file exists
 def validate_user_input(input):
 
-    is_valid = False
+    # if the file can't be found
+    # return false for filename
+    # not valid
+    try:
+        with open(filename) as fd:
+            pass
+    except FileNotFoundError:
+        return False
 
-    # if user clears all the 
-    # input errors return true is
-    # valid
+    return True
 
-    # hurdles?
-    # file exists?
+def add_task(task,filename):
+    # don't add nothing tasks
+    if len(task) == 0:
+        return int(-1)   
+    
+    # capitalize first letter for consistency
+    # and present file might not have newline
+    # at EOF
+    task = task[0].upper() + task[1:]
+    newtask = task + '\n'
 
-    return is_valid
+    # append task to file
+    # default mode append i.e. newfile false
+    if write_to_todo_list(filename, newtask) >= 0:
+        print(f"{task} added to list")
+    
+    return int(0)
 
 # main is here
 # testing
 
-# reading files
-filename = 'to_do_list.txt'
-#filename = 'x'
+# etc from user
+filename = input("What is the name of the file you want to open? ")
 
-# the function does the I/O work
-contents = read_todo_list(filename)
-if contents is not None:
-    print(contents)
+while not validate_user_input(filename):
+    print(F"File {filename} not found. Try Again:")
+    filename = input("What is the name of the file you want to open? ")
 
-# adding tasks
-    
-contents = 'Sleep\nWork\nEat\Sleep'
+# creating a new list
+# newfile == true
+# let I/O wrapper functions do the work   
+contents = "Sleep\nWork\nEat\nSleep\n"
 
 num_bytes = write_to_todo_list(filename,contents,True)
 if num_bytes < 0:
@@ -78,6 +100,22 @@ if num_bytes < 0:
 else:
     print(f"{num_bytes} characters written to {filename}")
 
-# etc from user
+    # the function does the I/O work
+contents = read_todo_list(filename)
+if contents is not None:
+    print(contents)
 
-# consider new lists - mode
+# adding tasks
+task = input("What task to you want to add?\n'quit' when done: ")
+
+while task.lower() != 'quit':
+    # returns -1 on empty
+    if add_task(task,filename) < 0:
+        print("Cannot add an empty task")
+
+    # give user chance to see update
+    print("Current list: ")
+    print(read_todo_list(filename))
+
+    # prompts for next task
+    task = input("What task to you want to add?\n'quit' when done: ")

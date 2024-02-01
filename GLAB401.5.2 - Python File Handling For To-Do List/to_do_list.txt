@@ -1,3 +1,7 @@
 Sleep
 Work
-Eat\Sleep
+Eat
+Sleep
+Laugh
+Cry
+Poop
