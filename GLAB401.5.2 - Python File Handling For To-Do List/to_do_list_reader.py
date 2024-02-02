@@ -18,8 +18,8 @@ def read_todo_list(filename):
         with open(filename) as fd:
             contents = fd.read()
     except FileNotFoundError:
-        return "Filename " + filename +": File Not Found"
-
+        print("Filename " + filename +": File Not Found")
+        return None
     return contents
 
 # for writing anything
@@ -84,19 +84,22 @@ if __name__ == "__main__":
     # the function does the I/O work
     contents = read_todo_list(filename)
     if contents is not None:
+        print("Here are the contents: ")
         print(contents)
 
-    # adding tasks
-    task = input("What task to you want to add?\n'quit' when done: ")
-
-    while task.lower() != 'quit':
-        # returns -1 on empty
-        if add_task(task,filename) < 0:
-            print("Cannot add an empty task")
-
-        # give user chance to see update
-        print("Current list: ")
-        print(read_todo_list(filename))
-
-        # prompts for next task
+        # adding tasks
         task = input("What task to you want to add?\n'quit' when done: ")
+
+        while task.lower() != 'quit':
+            # returns -1 on empty
+            if add_task(task,filename) < 0:
+                print("Cannot add an empty task")
+
+            # give user chance to see update
+            print("Current list: ")
+            print(read_todo_list(filename))
+
+            # prompts for next task
+            task = input("What task to you want to add?\n'quit' when done: ")
+    else:
+        print("Try running the program again")
