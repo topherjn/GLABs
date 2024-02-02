@@ -2,5 +2,8 @@ Sleep
 Work
 Eat
 Sleep
-Sleep
-Drink
+Work
+Smile
+Smile more
+Bye
+Walk the dogs
