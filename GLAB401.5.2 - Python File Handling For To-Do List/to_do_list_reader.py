@@ -50,6 +50,10 @@ def write_to_todo_list(filename, contents, newfile=False):
 # for file exists
 def validate_user_input(input):
 
+    # no sort of user input can be empty
+    if(len(input) < 1):
+        print("Input can't be empty")
+        return False
     # if the file can't be found
     # return false for filename
     # not valid
@@ -64,7 +68,7 @@ def validate_user_input(input):
 def add_task(task,filename):
 
     # don't add nothing tasks
-    if len(task) == 0:
+    if not validate_user_input(task):
         return int(-1)   
     
     # capitalize first letter for consistency

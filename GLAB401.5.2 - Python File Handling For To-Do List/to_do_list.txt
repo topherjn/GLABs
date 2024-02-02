@@ -2,6 +2,5 @@ Sleep
 Work
 Eat
 Sleep
-Poop
-Dream
-Cry
+Sleep
+Drink
