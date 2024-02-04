@@ -1,6 +1,6 @@
 import json
 from jsonschema import validate
-
+from jsonschema import ValidationError
 # task 2
 
 try:
@@ -44,11 +44,13 @@ with open('my_wrong_file.json','r') as my_invalid_fp:
     invalid_data = json.load(my_invalid_fp)
 
 
-# this works with the files given
+# this works with the files given - second one crashes
 print(validate(instance=my_file_data,schema=my_schema))
-print(validate(instance=invalid_data,schema=my_schema))
 
-
+try:
+    print(validate(instance=invalid_data,schema=my_schema))
+except ValidationError as validation_error:
+    print(validation_error)
 
 
 
