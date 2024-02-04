@@ -1,4 +1,5 @@
 import json
+from jsonschema import validate
 
 # task 2
 
@@ -32,6 +33,17 @@ try:
 except Exception:
     print("Something went wrong writing the json file")
     exit()
+# task 3 (I can't find schema for geojson that works)
+with open('my_file_schema.json','r') as schema_fp:
+    my_schema = json.load(schema_fp)
+
+with open('my_file.json','r') as my_file_fp:
+    my_file_data = json.load(my_file_fp)
+
+validate(instance=my_file_data,schema=my_schema)
+
+
+
 
 
            
