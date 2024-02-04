@@ -2,8 +2,12 @@ import json
 
 # task 2
 
-with (open("arrondissements.json", "r")) as file:
-    paris_arrondissements = json.load(file)
+try:
+    with (open("arrondissements.json", "r")) as file:
+        paris_arrondissements = json.load(file)
+except Exception:
+    print("Something went wrong reading the json file")
+    exit()
 
 # this shows the border coordinates for each
 # feature
@@ -22,7 +26,13 @@ for feature in paris_arrondissements['features']:
             print(coord)
 
 # task 1 - encode geometry dictionary to json
-with (open("geometry.json", "w")) as file:
-    json.dump(geometry, file)
+try:
+    with (open("geometry.json", "w")) as file:
+        json.dump(geometry, file)
+except Exception:
+    print("Something went wrong writing the json file")
+    exit()
+
+
            
         
