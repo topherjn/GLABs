@@ -40,7 +40,16 @@ with open('my_file_schema.json','r') as schema_fp:
 with open('my_file.json','r') as my_file_fp:
     my_file_data = json.load(my_file_fp)
 
-validate(instance=my_file_data,schema=my_schema)
+with open('my_wrong_file.json','r') as my_invalid_fp:
+    invalid_data = json.load(my_invalid_fp)
+
+
+# this works with the files given
+print(validate(instance=my_file_data,schema=my_schema))
+print(validate(instance=invalid_data,schema=my_schema))
+
+
+
 
 
 
