@@ -68,3 +68,20 @@ finally:
 
 
 # Read
+try:
+    cursor = conn.cursor()
+
+    select_data_query = """SELECT * FROM students """
+
+    cursor.execute(select_data_query)
+    rows = cursor.fetchall()
+
+    print("\nList of Students:")
+    for row in rows:
+        print(row)
+
+except mysql.connector.Error as e:
+    print(f"Error: {e}")
+
+finally:
+    cursor.close()
