@@ -54,7 +54,7 @@ finally:
 try:
     cursor = conn.cursor()
 
-    insert_data_query = """INSERT INTO students (name, age) VALUES ("Joe", 22) """
+    insert_data_query = """INSERT INTO students (name, age) VALUES ("Alice", 22) """
 
     cursor.execute(insert_data_query)
     conn.commit()
@@ -85,3 +85,40 @@ except mysql.connector.Error as e:
 
 finally:
     cursor.close()
+
+# Update
+try:
+    cursor = conn.cursor()
+
+    update_data_query = """
+    UPDATE students SET age = 23 WHERE name='Alice'
+    """
+
+    cursor.execute(update_data_query)
+    conn.commit()
+    print("Data updated successfully")
+
+except mysql.connector.Error as e:
+    print(f"Error: {e}")
+
+finally:
+    cursor.close()
+
+# Delete
+# Example Code for Deleting Data
+try:
+    cursor = conn.cursor()
+
+    delete_data_query = """
+    DELETE from students WHERE name = 'Alice'
+    """
+    cursor.execute(delete_data_query)
+    conn.commit()
+    print("Data deleted successfully")
+
+except mysql.connector.Error as e:
+    print(f"Error: {e}")
+
+finally:
+    cursor.close()
+    conn.close()
