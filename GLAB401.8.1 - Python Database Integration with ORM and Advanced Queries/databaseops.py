@@ -30,11 +30,11 @@ cursor.execute("USE operations_db")
 
 """Task 2: CRUD Operations"""
 
-# Create
+# Create table
 try:
     cursor = conn.cursor()
     create_table_query = """
-    CREATE TABLE students (
+    CREATE TABLE IF NOT EXISTS students (
         id INT NOT NULL AUTO_INCREMENT,
         name VARCHAR(50),
         age INT,
@@ -49,11 +49,16 @@ except mysql.connector.Error as e:
 
 finally:
     cursor.close()
+
+# Create data
 try:
     cursor = conn.cursor()
-    create_table_query = """ """
-    cursor.execute(create_table_query)
-    print("Table 'students' created successfully")
+
+    insert_data_query = """INSERT INTO students (name, age) VALUES ("Joe", 22) """
+
+    cursor.execute(insert_data_query)
+    conn.commit()
+    print("Data inserted successfully")
 
 except mysql.connector.Error as e:
     print(f"Error: {e}")
@@ -62,3 +67,4 @@ finally:
     cursor.close()
 
 
+# Read
