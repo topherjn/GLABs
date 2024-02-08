@@ -93,4 +93,3 @@ except mysql.connector.Error as e:
 # Close the database connection
 conn.close()
 print("\nDatabase connection closed")
-
