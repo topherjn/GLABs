@@ -12,9 +12,11 @@ class Bank:
             print(f"Customer Name: {account.customer.name}")
             print(f"Balance: {account.balance}")
 
+
 class Customer:
     def __init__(self, name):
         self.name = name
+
 
 class Account:
     def __init__(self, account_number, customer):
@@ -30,6 +32,7 @@ class Account:
             self.balance -= amount
         else:
             print("Insufficient balance")
+
 
 # Create objects and perform banking operations
 customer1 = Customer("John Doe")
