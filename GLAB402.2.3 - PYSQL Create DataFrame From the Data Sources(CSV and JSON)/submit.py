@@ -1,4 +1,3 @@
-import pyspark
 from pyspark.sql import SparkSession #Importing the Libraries
 from pyspark.sql.types import StructType,StructField, StringType, IntegerType,BooleanType,DoubleType
 

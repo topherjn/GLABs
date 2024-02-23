@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="288c222b-bdb3-4657-b816-f86be0e047d9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GLABs.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GLAB401.1.0 Supplemental Lists Etc Practice/Dictionary Excercises- Basics .ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/GLAB401.1.0 Supplemental Lists Etc Practice/Dictionary Excercises- Basics .ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GLAB401.4.1 - OOP in Python/banking.py" beforeDir="false" afterPath="$PROJECT_DIR$/GLAB401.4.1 - OOP in Python/banking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GLAB401.5.1 - JSON File Handling in Python/name_and_age.py" beforeDir="false" afterPath="$PROJECT_DIR$/GLAB401.5.1 - JSON File Handling in Python/name_and_age.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PA401.7.1 - Python Practice Problems General/PA_410_7_1_Python_Practice_Problems_General.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/PA401.7.1 - Python Practice Problems General/PA_410_7_1_Python_Practice_Problems_General.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLAB402.2.6 PySpark Dataframe, Queries, and Matplotlib/submit.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/GLAB402.2.6 PySpark Dataframe, Queries, and Matplotlib/submit.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +15,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2cb6GlxcXQnTeDdRxyMFp8HPYCo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,7 +29,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/nicho/AppData",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -55,6 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708367839620</updated>
       <workItem from="1708367841627" duration="33000" />
+      <workItem from="1708555884707" duration="473000" />
     </task>
     <servers />
   </component>
